@@ -54,11 +54,11 @@ internal class ChessBoard
     Console.OutputEncoding = Encoding.UTF8;
     Console.Clear();
 
-    renderBoard();
+    RenderBoard();
 
   }
 
-  private static void renderBoard()
+  private static void RenderBoard()
   {
     
     for (int row = 0; row < 8; row++)
