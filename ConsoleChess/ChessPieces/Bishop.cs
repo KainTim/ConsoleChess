@@ -7,5 +7,5 @@ using System.Threading.Tasks;
 namespace ConsoleChess.ChessPieces;
 internal class Bishop (bool isWhite, int column, int row) : ChessPiece(isWhite,column,row)
 {
-  public override string ToString() => IsWhite ? "♗" : "♝";
+  public override string ToString() => IsWhite ? "♝" : "♗";
 }
