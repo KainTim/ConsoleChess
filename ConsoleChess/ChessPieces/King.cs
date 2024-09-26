@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ConsoleChess.ChessPieces;
-internal class King(bool isWhite, int column, int row) : ChessPiece(isWhite,column,row)
+internal class King() : ChessPiece()
 {
-    public override string ToString() => IsWhite ? "♚": "♔";
+  public override bool CanMoveTo(int xTo, int yTo) => true;
+  public override string ToString() => IsWhite ? "♚": "♔";
 }

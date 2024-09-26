@@ -5,9 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ConsoleChess;
-internal abstract class ChessPiece(bool isWhite, int column, int row)
+internal abstract class ChessPiece()
 {
-  public bool IsWhite => isWhite;
-  public int Column => column;
-  public int Row => row;
+  public bool IsWhite { get; init; }
+  public int Column { get; set; }
+  public int Row { get; set; }
+
+  public abstract bool CanMoveTo(int xTo, int yTo);
 }
