@@ -71,7 +71,7 @@ internal class ChessBoard
             Console.BackgroundColor = ConsoleColor.Black;
             Console.Write("  ");
             Console.BackgroundColor = ConsoleColor.DarkGray;
-            for (int i = 0; i < 8; i++) { Console.Write("+---"); }
+            for (int i = 0; i < 8; i++) { Console.Write("+----"); }
 
             Console.WriteLine("+");
 
@@ -81,7 +81,7 @@ internal class ChessBoard
             Console.BackgroundColor = ConsoleColor.DarkGray;
             for (int column = 0; column < 8; column++)
             {
-                Console.Write($"| {(boardArr[row,column]==null ? " ":boardArr[row,column])} ");
+                Console.Write($"| {(boardArr[row,column]==null ? " ":boardArr[row,column])}  ");
             }
             Console.WriteLine("|");
 
@@ -92,7 +92,7 @@ internal class ChessBoard
         Console.BackgroundColor = ConsoleColor.DarkGray;
         for (int i = 0; i < 8; i++)
         {
-            Console.Write("+---");
+            Console.Write("+----");
         }
         Console.WriteLine("+");
         Console.BackgroundColor = ConsoleColor.Black;
@@ -100,7 +100,7 @@ internal class ChessBoard
         char[] chars = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h' };
         for (int column = 0; column < 8; column++)
         {
-            Console.Write($"{chars[column]}   ");
+            Console.Write($"{chars[column]}    ");
         }
     }
 }
