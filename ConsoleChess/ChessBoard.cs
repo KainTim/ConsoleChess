@@ -11,6 +11,7 @@ namespace ConsoleChess;
 internal class ChessBoard
 {
     private static ChessBoard? _instance;
+    public bool isWhite = true;
     private List<ChessPiece> _board = new List<ChessPiece>();
 
     public static ChessBoard Inst => _instance ??= new();
@@ -126,26 +127,30 @@ internal class ChessBoard
         var chessPiece = boardArr[xFrom, yFrom];
         if (chessPiece == null)
         {
-            foreach (var piece in boardArr)
-            {
-                Console.WriteLine($"{piece}");
-            }
             throw new Exception($"No Piece to from {xFrom},{yFrom}-{xTo},{yTo}!");
         }
-
-        if (chessPiece.CanMoveTo(xTo, yTo))
+        if (isWhite && chessPiece.IsWhite || !isWhite && !chessPiece.IsWhite)
         {
-            foreach(var piece in _board)
+            if (chessPiece.CanMoveTo(xTo, yTo))
             {
-                if (piece.Row == xTo && piece.Column == yTo) throw new Exception("There's already a piece there!");
+                foreach (var piece in _board)
+                {
+                    if (piece.Row == xTo && piece.Column == yTo) throw new Exception("There's already a piece there!");
+                }
+                chessPiece.Row = xTo;
+                chessPiece.Column = yTo;
             }
-            chessPiece.Row = xTo;
-            chessPiece.Column = yTo;
+            else
+            {
+                throw new Exception($"That's not somewhere you can Move to: {xTo},{yTo}!");
+            }
         }
         else
         {
-            throw new Exception($"That's not somewhere you can Move to: {xTo},{yTo}!");
+
+            throw new Exception($"That's not your Piece: {xTo},{yTo}!");
         }
+
 
 
     }

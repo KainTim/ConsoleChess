@@ -12,6 +12,8 @@ while (true)
     {
         HandleMove(input);
         chessBoard.Render();
+
+        chessBoard.isWhite = !chessBoard.isWhite;
     }
     catch (Exception exc)
     {
@@ -69,4 +71,5 @@ void PrintHelpInformation()
 {
     Console.WriteLine("Make your Move!");
     Console.WriteLine("Format: a1-a2");
+    Console.WriteLine($"Color {(chessBoard.isWhite ? "White" : "Black")}");
 }
