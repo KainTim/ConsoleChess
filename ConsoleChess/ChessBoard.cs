@@ -26,33 +26,33 @@ internal class ChessBoard
         new Queen {IsWhite = false, Column = 3, Row = 0 },
         new King {IsWhite = false, Column = 4, Row = 0 },
         new Bishop {IsWhite = false, Column = 5, Row = 0 },
-        new Knight(false, 6,0),
-        new Rook(false,7,0),
-        new Pawn(false,0,1),
-        new Pawn(false,1,1),
-        new Pawn(false,2,1),
-        new Pawn(false,3,1),
-        new Pawn(false,4,1),
-        new Pawn(false,5,1),
-        new Pawn(false,6,1),
-        new Pawn(false,7,1),
+        new Knight {IsWhite = false, Column = 6, Row = 0 },
+        new Rook {IsWhite = false, Column = 7, Row = 0 },
+        new Pawn {IsWhite = false, Column = 0, Row = 1 },
+        new Pawn {IsWhite = false, Column = 1, Row = 1 },
+        new Pawn {IsWhite = false, Column = 2, Row = 1 },
+        new Pawn {IsWhite = false, Column = 3, Row = 1 },
+        new Pawn {IsWhite = false, Column = 4, Row = 1 },
+        new Pawn {IsWhite = false, Column = 5, Row = 1 },
+        new Pawn {IsWhite = false, Column = 6, Row = 1 },
+        new Pawn {IsWhite = false, Column = 7, Row = 1 },
 
-        new Rook(true, 0,7),
-        new Knight(true, 1,7),
-        new Bishop(true, 2,7),
-        new Queen(true, 3,7),
-        new King(true, 4,7),
-        new Bishop(true,5,7),
-        new Knight(true, 6,7),
-        new Rook(true,7,7),
-        new Pawn(true,0,6),
-        new Pawn(true,1,6),
-        new Pawn(true,2,6),
-        new Pawn(true,3,6),
-        new Pawn(true,4,6),
-        new Pawn(true,5,6),
-        new Pawn(true,6,6),
-        new Pawn(true,7,6),
+        new Rook {IsWhite = true,Column = 0, Row = 7 },
+        new Knight { IsWhite = true, Column = 1, Row = 7 },
+        new Bishop {IsWhite = true, Column = 2, Row = 7 },
+        new Queen {IsWhite = true, Column = 3, Row = 7 },
+        new King {IsWhite = true, Column = 4, Row = 7 },
+        new Bishop {IsWhite = true, Column = 5, Row = 7 },
+        new Knight {IsWhite = true, Column = 6, Row = 7 },
+        new Rook {IsWhite = true, Column = 7, Row = 7 },
+        new Pawn {IsWhite = true, Column = 0, Row = 6 },
+        new Pawn {IsWhite = true, Column = 1, Row = 6 },
+        new Pawn {IsWhite = true, Column = 2, Row = 6 },
+        new Pawn {IsWhite = true, Column = 3, Row = 6 },
+        new Pawn {IsWhite = true, Column = 4, Row = 6 },
+        new Pawn {IsWhite = true, Column = 5, Row = 6 },
+        new Pawn {IsWhite = true, Column = 6, Row = 6 },
+        new Pawn {IsWhite = true, Column = 7, Row = 6 },
   ];
   }
 
@@ -135,10 +135,12 @@ internal class ChessBoard
 
     if (chessPiece.CanMoveTo(xTo, yTo))
     {
+      /*
       foreach (var piece in boardArr)
       {
         Console.WriteLine($"{piece} [{piece?.Row} {piece?.Column}]");
       }
+      */
       chessPiece.Row = xTo;
       chessPiece.Column = yTo;
     }
