@@ -7,7 +7,7 @@ chessBoard.Render();
 while (true)
 {
     PrintHelpInformation();
-    string input = Console.ReadLine() ?? "No input";
+    string input = Console.ReadLine() ?? "UNKNOWN";
     try
     {
         HandleMove(input);
@@ -45,12 +45,12 @@ void HandleMove(string input)
     {
         int xFrom = 8 - int.Parse(parts[0].ToCharArray()[1].ToString());
 
-        if (xFrom is < 0 or > 7) throw new Exception($"column {parts[0].ToCharArray()[1]} is not a valid row {yFrom}");
+        if (xFrom is < 0 or > 7) throw new Exception($"column {parts[0].ToCharArray()[1]} is not a valid row");
         try
         {
             int xTo = 8 - int.Parse(parts[1].ToCharArray()[1].ToString());
 
-            if (xTo is < 0 or > 7) throw new Exception($"column {parts[1].ToCharArray()[1]} is not a valid row {yTo}");
+            if (xTo is < 0 or > 7) throw new Exception($"column {parts[1].ToCharArray()[1]} is not a valid row");
             chessBoard.MovePieceFromTo(xFrom, yFrom, xTo, yTo);
         }
         catch (FormatException)
